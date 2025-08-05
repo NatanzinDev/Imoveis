@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Cadastrar tipo de imóvel' /}
+
+<form action="@{Imoveis.salvar}">
+	<input type="hidden" name="imovel.id" value="${imovel?.id}">
+	
+	<label for="imovelcod">Código de anuncio:</label>
+	<input type="text" id="imovelcod" name="imovel.codigoAnuncio" value="${imovel?.codigoAnuncio}" required><br>
+	
+		<label for="imovelbairro">Bairro:</label>
+	<input type="text" id="imovelbairro" name="imovel.bairro" value="${imovel?.bairro}" required><br>
+	
+		<label for="imovelcom">Quantidades de comodos:</label>
+	<input type="text" id="imovelcom" name="imovel.quantidadeComodos" value="${imovel?.quantidadeComodos}" required><br>
+	
+		<label for="imovelint">Area interna:</label>
+	<input type="text" id="imovelint" name="imovel.areaInterna" value="${imovel?.areaInterna}" required><br>
+	
+		<label for="imovelext">Area Externa:</label>
+	<input type="text" id="imovelext" name="imovel.areaExterna" value="${imovel?.areaExterna}" required><br>
+	
+	<select name="imovel.tipoImovel.id">
+		#{list items:tipos, as:'t'}
+				<option value="${t.id}" 
+					${t.id == imovel?.tipoImovel?.id ? 'selected' : ''}>
+						${t.descricao}
+				</option>
+			#{/list}
+	</select><br>
+	
+	<input type="submit">
+	
+	
+	
+</form>

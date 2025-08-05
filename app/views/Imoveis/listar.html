@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Listar tipos de imóveis' /}
+
+<ol>
+#{list items:imoveis, as:'item'}
+ 
+ <li>${item} <a href="@{Tipoimoveis.editar(item.id)}">Editar</a> - <a href="@{Tipoimoveis.excluir(item.id)}">Excluir</a></li>
+
+#{/list}
+</ol>
+
+<a href="@{Imoveis.formimovel}">Cadastrar novo imóvel</a>
