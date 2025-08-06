@@ -16,7 +16,7 @@ public class Imoveis extends Controller{
 	
 	public static void salvar(Imovel imovel) {
 		List<Imovel> imoveis = Imovel.find("status <> ?1", Status.DESATIVADO).fetch();
-		if (imovel != null) {
+		if (imovel != null && (imovel.quantidadeComodos > 0 && imovel.areaExterna > 0 && imovel.areaInterna >0)) {
 			
 			for(Imovel i : imoveis) {
 				if(i.codigoAnuncio.equals(imovel.codigoAnuncio)) {
@@ -48,8 +48,24 @@ public class Imoveis extends Controller{
 	
 	public static void editar(Long id) {
 		List<TipoImovel> tipos = TipoImovel.find("status <> ?1", Status.DESATIVADO).fetch();
-		Imovel imovel = TipoImovel.findById(id);
+		Imovel imovel = Imovel.findById(id);
 		renderTemplate("Imoveis/formimovel.html", imovel, tipos);
+		
+	}
+	
+	public static void excluir(Long id) {
+
+		Imovel imovel = Imovel.findById(id);
+
+		if (imovel != null) {
+			imovel.status = Status.DESATIVADO;
+			imovel.save();
+			flash.success("Imóvel foi excluido com sucesso!");
+			listar();
+		} else {
+			flash.error("Ocorreu algum erro ao excluir");
+			listar();
+		}
 		
 	}
 }

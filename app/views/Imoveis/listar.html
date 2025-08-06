@@ -4,9 +4,12 @@
 <ol>
 #{list items:imoveis, as:'item'}
  
- <li>${item} <a href="@{Tipoimoveis.editar(item.id)}">Editar</a> - <a href="@{Tipoimoveis.excluir(item.id)}">Excluir</a></li>
+ <li>${item} <a href="@{Imoveis.editar(item.id)}">Editar</a> - <a href="@{Imoveis.excluir(item.id)}">Excluir</a></li>
 
 #{/list}
 </ol>
+#{else} 
+<p>Não há imóveis cadastrados ainda.</p>
+#{/else}
 
 <a href="@{Imoveis.formimovel}">Cadastrar novo imóvel</a>

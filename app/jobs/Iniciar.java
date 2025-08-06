@@ -1,5 +1,6 @@
 package jobs;
 
+import models.Imovel;
 import models.TipoImovel;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
@@ -16,6 +17,10 @@ public class Iniciar extends Job {
 			t1.save();
 			t2.save();
 			t3.save();
+			
+			
+			
+			
 		}
 	}
 	

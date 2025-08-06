@@ -14,8 +14,8 @@ public class Imovel extends Model{
 	public Integer quantidadeComodos;
 	@Override
 	public String toString() {
-		return "Imovel: codigoAnuncio=" + codigoAnuncio + ", bairro=" + bairro + ", quantidadeComodos="
-				+ quantidadeComodos + ", areaInterna=" + areaInterna + ", areaExterna=" + areaExterna + ", tipoImovel=" + tipoImovel.descricao;
+		return "Código do Anuncio:" + codigoAnuncio + " | Bairro:" + bairro + " | Quantidade de Comodos:"
+				+ quantidadeComodos + " | Area Interna:" + areaInterna + " | Area Externa:" + areaExterna +" | Area total:" + this.getAreaTotal() +" | Tipo de Imovel:" + tipoImovel.descricao ;
 	}
 
 	public Double areaInterna;

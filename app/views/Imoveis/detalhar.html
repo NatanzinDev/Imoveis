@@ -3,8 +3,11 @@
 
 <h2>Detalhes do imóvel</h2>
 
-<p>Código do a</p>
+<p>Código do imóvel: ${imovel.codigoAnuncio}</p>
+<p>Tipo do imóvel: ${imovel.tipoImovel.descricao}</p>
+<p>Area total: ${imovel.areaTotal}</p>
 
 
 <a href="@{Imoveis.formimovel}">Cadastrar novo imóvel</a><br>
-<a href="@{Imoveis.editar(imovel.id)}">Editar imóvel</a>
+<a href="@{Imoveis.editar(imovel.id)}">Editar imóvel</a><br>
+<a href="@{Imoveis.listar}">Lista de imóveis</a>
