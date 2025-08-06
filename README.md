@@ -51,13 +51,6 @@
   <li>E para passar mais de um valor se usa "&" Exemplo: ?email=valoremail&senha=valorsenha</li>
 </ol>
 
-## Assuntos cobrados
-<ol>
-  <li>Montagem de querry string </li>
-  <li>CRUD</li>
-  <li>Diferença dos methodos get e post</li>
-</ol>
-
 ## Estruturas de controle e repetição
 <ol>
   <li>
